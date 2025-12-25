@@ -408,6 +408,7 @@ body {
 
 .kotak-work {
     position: relative;
+    aspect-ratio: 16 / 9;
 }
 
 .twitter-overlay {
@@ -557,3 +558,4 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
