@@ -155,3 +155,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+document.querySelectorAll('.twitter-overlay').forEach(overlay => {
+    overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+    });
+});
