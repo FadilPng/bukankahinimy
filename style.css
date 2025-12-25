@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0a1628;
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        radial-gradient(circle, #7de7ff 0 2px, transparent 3px);
+    background-size: 40px 40px;
+    background-position:0 0,0 0,20px 20px;
+    transform: rotate(45deg) scale(1.5);
+    transform-origin: center;
+    z-index: -2;
+}
+
+.aurora {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(60px);
+    opacity: 0.6;
+    animation: auroraShift 15s ease-in-out infinite;
+    background: linear-gradient(135deg,
+            rgba(62, 146, 204, 0.4),
+            rgba(126, 213, 255, 0.3),
+            rgba(162, 155, 254, 0.4),
+            rgba(255, 107, 107, 0.3),
+            rgba(78, 205, 196, 0.3));
+    background-size: 400% 400%;
+}
+
+@keyframes auroraShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 75%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 25%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.bintang-jatuh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-300px) translateY(300px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+.bintangjatuh {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+    animation: shoot 1s linear infinite;
+    opacity: 0;
+}
+
+.bintangjatuh::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+    transform: translateX(50px) rotate(0deg); 
+}
+
+@keyframes klip {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+.titikterang {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.titik-terang {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: klip 3s infinite;
+}
+
+.kontener {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profil {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border: 2px solid #1e3a8a;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-out;
+    color: #1e3a8a;
+}
+
+.kepala {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgba(30, 58, 138, 0.1);
+    padding-bottom: 20px;
+}
+
+.gambar-profil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #1e3a8a;
+    box-shadow: 0 0 15px rgba(30, 58, 138, 0.3);
+    margin-right: 30px;
+}
+
+.info-profil h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+.info-profil p {
+    font-size: 1.2rem;
+    color: #3e92cc;
+    margin-bottom: 15px;
+}
+
+.bagian-kontener {
+    margin-bottom: 30px;
+}
+
+.bagian-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1e3a8a;
+    border-left: 4px solid #3e92cc;
+    padding-left: 15px;
+}
+
+.bagian-title i {
+    color: #3e92cc;
+}
+
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.kartu-info {
+    background: rgba(30, 58, 138, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(30, 58, 138, 0.1);
+    transition: all 0.3s ease;
+}
+
+.kartu-info:hover {
+    background: rgba(30, 58, 138, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.1);
+}
+
+.kartu-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+.kartu-info p {
+    color: #3e92cc;
+}
+
+.riwayat {
+    position: relative;
+    margin-left: 30px;
+}
+
+.riwayat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    background: rgba(30, 58, 138, 0.2);
+}
+
+.isi-riwayat {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+
+.isi-riwayat::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -9px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3e92cc;
+    box-shadow: 0 0 0 4px rgba(62, 146, 204, 0.2);
+}
+
+.waktu-riwayat {
+    font-weight: 600;
+    color: #3e92cc;
+    margin-bottom: 5px;
+}
+
+.isi-riwayatmk2 h3 {
+    margin-bottom: 5px;
+    color: #1e3a8a;
+}
+
+.isi-riwayatmk2 p {
+    color: #3e92cc;
+}
+
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.isi-skill {
+    width: 100%;
+}
+
+.bagian-skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.nama-skill {
+    font-weight: 600;
+    color: #1e3a8a;
+    font-size: 1rem;
+}
+
+.kemahiran-skill {
+    font-weight: 600;
+    color: #3e92cc;
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 25px;
+    background: rgba(30, 58, 138, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(30, 58, 138, 0.2);
+}
+
+.isi-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #1e3a8a, #3e92cc);
+    border-radius: 20px;
+    transition: width 1.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.isi-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.grid-work {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.isi-work {
+    background: rgba(30, 58, 138, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    border: 2px solid rgba(30, 58, 138, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.isi-work:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.2);
+    border-color: #3e92cc;
+}
+
+.kotak-work {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(30, 58, 138, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kotak-work video,
+.kotak-work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nama-work {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #1e3a8a;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.kaki {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    opacity: 0.7;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+#bgm {
+    display: none;
+}
+
+/* sedikit kejahilan kecil :v */
+
+.preng {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.preng-play {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #1e3a8a, #3e92cc);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(30, 58, 138, 0.4);
+    transition: all 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.preng-play:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.6);
+}
+
+.preng-play i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.kotak-preng-vidio {
+    display: none;
+    width: 280px;
+    background: rgba(10, 36, 99, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid #3e92cc;
+    opacity: 0;
+    transform: translateY(20px) scale(0.85);
+    transition: all 0.35s ease;
+}
+
+.kotak-preng-vidio.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.kotak-preng-vidio.hide {
+    opacity: 0;
+    transform: translateY(20px) scale(0.85);
+}
+
+.header-preng {
+    background: linear-gradient(135deg, #1e3a8a, #3e92cc);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.judul-preng {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.close-preng {
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-preng:hover {
+    background: #ff0000;
+    transform: scale(1.1);
+}
+
+.wrapper-preng {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #000;
+}
+
+.wrapper-preng video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
