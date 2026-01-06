@@ -255,9 +255,9 @@ body::-webkit-scrollbar {
 }
 
 .kartu-info:hover {
-    background: rgba(30, 58, 138, 0.1);
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.1);
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.2);
+    border-color: #3e92cc;
 }
 
 .kartu-info h3 {
@@ -596,6 +596,7 @@ body::-webkit-scrollbar {
     height: 100%;
     object-fit: cover;
 }
+
 
 
 
