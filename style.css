@@ -54,6 +54,39 @@ body::-webkit-scrollbar {
     background-size: 400% 400%;
 }
 
+.iro {
+    font-weight: 600;
+    background: linear-gradient(
+        135deg,
+        rgba(62, 146, 204, 1),
+        rgba(126, 213, 255, 1),
+        rgba(162, 155, 254, 1),
+        rgba(255, 107, 107, 1),
+        rgba(78, 205, 196, 1)
+    );
+    background-size: 400% 400%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: auroraShift 8s ease-in-out infinite;
+}
+
+.iro::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    background-size: inherit;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: blur(6px);
+    opacity: 0.7;
+    z-index: -1;
+}
+
 @keyframes auroraShift {
     0% {
         background-position: 0% 50%;
@@ -596,6 +629,7 @@ body::-webkit-scrollbar {
     height: 100%;
     object-fit: cover;
 }
+
 
 
 
